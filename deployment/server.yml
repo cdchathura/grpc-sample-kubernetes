@@ -17,5 +17,8 @@ spec:
       containers:
         - image: cdchathura/grpc-server:1.0
           name: simple-server
+          env:
+            - name: server.port
+              value: "8080"
           ports:
             - containerPort: 8080
