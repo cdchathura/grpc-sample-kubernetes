@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sample-dep
+  name: sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+        - image: cdchathura/grpc-server:1.0
+          name: simple-server
+          ports:
+            - containerPort: 8080
